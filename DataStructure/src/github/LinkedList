@@ -1,0 +1,43 @@
+
+public class LinkedList {
+
+	Node head;//by default the value is null
+	
+	public void insertData(int data) {
+		
+		Node node = new Node(); 
+		node.data = data;  
+		node.next= null; 
+		System.out.println("#########node.data : "+ node.data);
+			
+		//first node creation to LinkedList- head 
+		if(head==null) {    		 
+			
+			head= node;			
+			System.out.println("node.data : "+ node.data);
+					 }
+		//adding new nodes 
+		else { 											
+					
+			Node tempNode = head;
+			System.out.println("tempNode.data : " + tempNode.data);
+	
+			while(tempNode.next!=null) { 			
+				tempNode=tempNode.next; 			//jump to next node
+			}
+							tempNode.next=node;			
+		}
+		
+	}
+	
+	public void display() {
+		System.out.println("the values in the linkedlist are");
+		Node n = head;
+		while(n.next!=null) {
+		
+			System.out.println(n.data);
+			n=n.next;
+		}
+		System.out.println(n.data);	}
+	
+}
